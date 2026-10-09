@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conheça a interface do MetaForge: edição, organização e conferência de metadados. Demonstração visual com exemplos fictícios.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>MetaForge — demonstração visual</title>
+  <link rel="icon" href="symbol.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#content">Ir para o conteúdo</a>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Menu principal">
+      <div class="brand"><img src="symbol.svg" alt="" width="42" height="42"><span>MetaForge</span></div>
+      <div class="eyebrow workspace-label">SEU WORKSPACE</div>
+      <nav>
+        <button class="nav-item" data-section="license"><span class="nav-icon" aria-hidden="true">⌘</span>Licença e dispositivo</button>
+        <button class="nav-item" data-section="editor" aria-current="page"><span class="nav-icon" aria-hidden="true">◈</span>Editor de metadados</button>
+        <button class="nav-item" data-section="workspace"><span class="nav-icon" aria-hidden="true">⇄</span>Perfis, lote e histórico</button>
+        <button class="nav-item" data-section="settings"><span class="nav-icon" aria-hidden="true">⚙</span>Configurações</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="local-card"><strong>Conheça a interface</strong><p>Explore as telas com exemplos fictícios. Esta demonstração não acessa seus arquivos.</p></div><span class="eyebrow">METAFORGE / DEMONSTRAÇÃO</span></div>
+    </aside>
+    <main>
+      <header class="topbar"><span id="breadcrumb" class="eyebrow">WORKSPACE / METADADOS</span><span class="badge">DEMO VISUAL</span></header>
+      <div class="demo-note"><span class="note-icon" aria-hidden="true">i</span><p>Prévia visual com dados fictícios. A edição instalável para Windows permite testar somente o título de DOCX. <a href="https://github.com/gsantanaoffsec/metaforge-test-version/releases" target="_blank" rel="noopener noreferrer">Ver downloads Windows ↗</a></p></div>
+      <div id="content" tabindex="-1">
+        <section id="editor" class="section" aria-labelledby="editor-title">
+          <div class="section-heading"><div><span class="eyebrow">CONTROLE EM CADA DETALHE</span><h1 id="editor-title">Editor de metadados</h1><p>Leia, ajuste e valide as propriedades dos seus arquivos.</p></div><button class="primary" id="next-example">Trocar exemplo <span aria-hidden="true">↗</span></button></div>
+          <div class="example-picker" aria-label="Exemplos de arquivos"><button data-example="pdf" aria-pressed="true">Documento PDF</button><button data-example="docx" aria-pressed="false">Documento Word</button><button data-example="jpg" aria-pressed="false">Imagem JPG</button></div>
+          <div class="editor-grid">
+            <article class="card file-card"><div class="file-symbol" id="file-format">PDF</div><h2 id="file-name">proposta-comercial.pdf</h2><p id="file-size" class="muted">248 KB · Exemplo fictício</p><hr><span class="eyebrow">LOCALIZAÇÃO ILUSTRATIVA</span><p class="file-path" id="file-path">Documentos / Exemplos / proposta-comercial.pdf</p><hr><span class="eyebrow">ESTADO DA EDIÇÃO</span><p>Prévia das propriedades</p><p class="muted small">Campos somente para leitura nesta demonstração.</p><button class="full" data-preview="comparison">Comparar metadados ⇄</button></article>
+            <article class="card properties"><div class="properties-header"><h2>Propriedades do arquivo</h2><label class="sr-only" for="group">Filtrar grupo</label><select id="group"><option value="all">Todos os grupos</option><option value="Documento">Documento</option><option value="Imagem">Imagem</option><option value="Sistema">Sistema</option></select></div><label class="sr-only" for="search">Buscar propriedade</label><input type="search" id="search" placeholder="Buscar propriedade…" autocomplete="off"><div id="fields" class="fields"></div><div class="save-row"><span class="muted small">No aplicativo, os campos alterados são validados antes de gravar.</span><button class="primary" data-unavailable="A gravação está disponível no aplicativo completo. Esta prévia não edita nem gera documentos.">Validar e salvar →</button></div></article>
+          </div>
+        </section>
+        <section id="license" class="section narrow" aria-labelledby="license-title" hidden><span class="eyebrow">ACESSO PESSOAL</span><h1 id="license-title">Seu espaço de trabalho.</h1><p class="intro">Uma prévia da tela apresentada após a ativação da licença.</p><article class="card padded"><div class="card-heading"><h2>Licença ativa</h2><span class="badge">EXEMPLO</span></div><dl class="details"><div><dt>Dispositivo</dt><dd>NOTEBOOK-EXEMPLO</dd></div><div><dt>Tempo restante</dt><dd>30 dias fictícios</dd></div><div><dt>Vínculo</dt><dd>Este dispositivo</dd></div></dl><p class="muted small">Nenhuma chave real foi incluída. Esta página não coleta nome do computador ou HWID.</p></article><p class="muted small">No aplicativo completo, mudanças na identificação do dispositivo, como troca da placa-mãe, podem afetar o vínculo da licença.</p></section>
+        <section id="workspace" class="section" aria-labelledby="workspace-title" hidden><div class="section-heading"><div><span class="eyebrow">ORGANIZAÇÃO COM CRITÉRIO</span><h1 id="workspace-title">Seu fluxo de trabalho</h1><p>Reutilize regras, confira conjuntos e acompanhe os resultados.</p></div></div><div class="tool-list" aria-label="Prévias das ferramentas"><button data-preview="policies">Conferência</button><button data-preview="inventory">Inventário CSV</button><button data-preview="normalize">Normalização</button><button data-preview="comparison">Comparar arquivos</button><button data-preview="rename">Renomear</button><button data-preview="queue">Filas persistentes</button></div><div class="tabs" role="tablist" aria-label="Workspace"><button role="tab" id="tab-profiles" aria-controls="workspace-panel" aria-selected="true" data-tab="profiles">Perfis</button><button role="tab" id="tab-batch" aria-controls="workspace-panel" aria-selected="false" tabindex="-1" data-tab="batch">Lote</button><button role="tab" id="tab-inspection" aria-controls="workspace-panel" aria-selected="false" tabindex="-1" data-tab="inspection">Inspeção</button><button role="tab" id="tab-history" aria-controls="workspace-panel" aria-selected="false" tabindex="-1" data-tab="history">Histórico</button></div><article id="workspace-panel" class="card padded" role="tabpanel" aria-labelledby="tab-profiles"></article></section>
+        <section id="settings" class="section narrow" aria-labelledby="settings-title" hidden><span class="eyebrow">SEU APLICATIVO</span><h1 id="settings-title">Configurações</h1><article class="card padded"><h2>Instalação e componentes</h2><p class="muted">No aplicativo completo, confira a instalação e os componentes necessários para trabalhar.</p><button data-unavailable="A demonstração abre no navegador e não instala nem verifica componentes no seu computador.">Verificar instalação</button></article><article class="card padded"><h2>Diagnóstico para suporte</h2><p class="muted">Uma prévia das informações técnicas que você pode revisar antes de exportar um relatório no aplicativo.</p><button data-preview="diagnostic">Ver exemplo de diagnóstico</button></article><article class="card padded"><h2>Ajuda e guia de uso</h2><p class="muted">Da abertura de um arquivo à conferência do resultado.</p><button data-preview="guide">Abrir guia de uso</button></article></section>
+      </div>
+      <footer><span>MetaForge · Demonstração com dados fictícios</span><span>DOCUMENTOS / IMAGENS / METADADOS</span></footer>
+    </main>
+  </div>
+  <dialog id="preview-dialog" aria-labelledby="preview-title"><div class="dialog-heading"><span class="eyebrow">PRÉVIA DO RECURSO</span><button id="close-dialog" aria-label="Fechar prévia">×</button></div><h2 id="preview-title"></h2><div id="preview-body"></div><p class="muted small dialog-note">Os exemplos são ilustrativos. Nenhum arquivo é lido, alterado ou exportado.</p></dialog>
+  <div id="notice" class="notice" role="status" aria-live="polite" hidden><span id="notice-text"></span><button id="dismiss-notice" aria-label="Fechar aviso">×</button></div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+METAFORGE DEMO — Windows x64
+
+1. Extraia TODOS os arquivos do ZIP para uma pasta.
+2. Execute MetaForgeDemo.exe.
+3. Leia as condições, aceite se concordar e clique em Instalar e abrir.
+
+O instalador usa %LOCALAPPDATA%\MetaForgeDemo e cria um atalho no menu Iniciar.
+O runtime está incluído. Não exige conta, chave, servidor ou administrador.
+
+TESTE REAL: abrir DOCX, alterar somente o título e salvar em um nome NOVO.
+O original não é substituído. Destinos já existentes são recusados.
+Limite: 32 MB por DOCX, título com até 512 caracteres.
+DOCX sem docProps/core.xml, com assinatura digital ou estrutura incompatível é recusado.
+
+Todo o restante está BLOQUEADO. PDF, imagem, licença, perfis, lote, inspeção e
+histórico são apenas prévias com dados fictícios. Esta edição não coleta HWID.
+
+Não é o aplicativo comercial nem uma avaliação da licença comercial.
+Para desinstalar, use Configurações > Desinstalar esta demonstração.
+Esta instalação não aparece na lista Aplicativos instalados do Windows.
+
+Confira TERMOS-DE-USO.md, OFL.txt e SHA256SUMS.txt.
+O executável ainda não possui certificado Authenticode de um publicador confiável.
+O Windows pode apresentar aviso de publicador desconhecido.

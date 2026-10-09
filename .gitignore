@@ -1,0 +1,11 @@
+# Somente a vitrine e a documentação são públicas. Fontes C# e builds ficam locais.
+private-source/
+artifacts/
+*.exe
+*.dll
+*.pdb
+*.zip
+*.log
+**/bin/
+**/obj/
+node_modules/
