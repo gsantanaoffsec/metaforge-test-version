@@ -1,24 +1,27 @@
-METAFORGE DEMO — Windows x64
+METAFORGE DEMO 1.1.0 — Windows x64 / macOS Apple Silicon
 
-1. Extraia TODOS os arquivos do ZIP para uma pasta.
-2. Execute MetaForgeDemo.exe.
-3. Leia as condições, aceite se concordar e clique em Instalar e abrir.
-
-O instalador usa %LOCALAPPDATA%\MetaForgeDemo e cria um atalho no menu Iniciar.
+Extraia TODOS os arquivos do ZIP.
+Windows: abra MetaForgeDemo.exe, mantendo todas as bibliotecas juntas.
+macOS: abra MetaForge Demo.app; opcionalmente arraste para Aplicativos.
 O runtime está incluído. Não exige conta, chave, servidor ou administrador.
 
-TESTE REAL: abrir DOCX, alterar somente o título e salvar em um nome NOVO.
-O original não é substituído. Destinos já existentes são recusados.
-Limite: 32 MB por DOCX, título com até 512 caracteres.
-DOCX sem docProps/core.xml, com assinatura digital ou estrutura incompatível é recusado.
+EDIÇÃO PORTÁTIL: não instala serviços nem cria atalhos. Para remover,
+feche o aplicativo e apague sua pasta. Preserve os documentos pessoais.
+A versão Windows 1.0.0 instalada pode ser removida pela própria versão antiga.
 
-Todo o restante está BLOQUEADO. PDF, imagem, licença, perfis, lote, inspeção e
-histórico são apenas prévias com dados fictícios. Esta edição não coleta HWID.
+TESTE REAL: abrir DOCX, alterar SOMENTE o título e salvar em um nome NOVO.
+Original e destinos existentes não são substituídos.
+32 MB por DOCX; título de até 512 caracteres.
+Documentos sem propriedades básicas, assinados ou incompatíveis são recusados.
+Título é a propriedade de metadados, não o texto no corpo do documento.
+Todo outro recurso está bloqueado. As prévias não executam operações.
 
-Não é o aplicativo comercial nem uma avaliação da licença comercial.
-Para desinstalar, use Configurações > Desinstalar esta demonstração.
-Esta instalação não aparece na lista Aplicativos instalados do Windows.
+Esta é a demonstração PÚBLICA reduzida. A edição privada completa de gbr.m.s
+não faz parte desta distribuição. Sem coleta de HWID ou API comercial.
 
-Confira TERMOS-DE-USO.md, OFL.txt e SHA256SUMS.txt.
-O executável ainda não possui certificado Authenticode de um publicador confiável.
-O Windows pode apresentar aviso de publicador desconhecido.
+Windows: compilado, execução da interface 1.1.0 ainda pendente em Windows.
+macOS: executado em Apple Silicon/macOS 27; alvo mínimo 14, outros não validados.
+Sem Authenticode comercial / sem Developer ID ou notarização Apple.
+Use os controles normais do sistema; não desative proteções.
+Confira README.md/VALIDACAO.md no repositório, TERMOS-DE-USO.md,
+licenses/ e os hashes publicados em SHA256SUMS.txt na release.

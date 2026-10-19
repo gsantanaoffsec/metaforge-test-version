@@ -1,173 +1,129 @@
 # MetaForge — demonstração pública
 
-**Conheça a interface do MetaForge e teste a alteração do título de um documento Word, preservando o arquivo original.**
+**Teste a alteração do título de um documento Word, preservando o original. Agora para Windows e macOS.**
 
-O MetaForge é um aplicativo desktop para editar, organizar e conferir metadados de documentos e imagens. Metadados são informações associadas ao arquivo, como título, autor, assunto e datas, que ajudam a identificar e organizar seu conteúdo.
+O MetaForge completo edita, organiza e confere metadados de documentos e imagens. Esta demonstração independente permite editar **somente o título de DOCX** e salvar uma **nova cópia**. Autor, assunto, corpo do documento e demais partes permanecem preservados. Outros recursos são prévias bloqueadas.
 
-Este repositório contém **somente a vitrine web e a documentação da demonstração**. A edição instalável é distribuída em Releases. **O painel administrativo, o servidor, o código-fonte C#, o motor completo de edição, bancos de dados, chaves e serviços de licenciamento não estão incluídos.**
+Este repositório contém apenas a vitrine web e a documentação pública. Os aplicativos são distribuídos em Releases. Não inclui fontes C#/Swift, motor de produção, painel administrativo, API, banco de dados, chaves ou serviços de licenciamento. A edição completa privada do proprietário **gbr.m.s** não faz parte destes downloads.
 
-## Acessos
+## Downloads — versão 1.1.0
 
-| O que você deseja | Onde acessar |
+| Acesso | Link |
 | --- | --- |
-| Conhecer as telas no navegador | [Abrir a vitrine](https://gsantanaoffsec.github.io/metaforge-test-version/) |
-| Baixar a edição Windows | [Baixar MetaForge Demo](https://github.com/gsantanaoffsec/metaforge-test-version/releases/download/demo-v1.0.0/MetaForge-Demo-win-x64.zip) |
-| Consultar downloads e notas | [Release da demonstração](https://github.com/gsantanaoffsec/metaforge-test-version/releases/tag/demo-v1.0.0) |
-| Conferir os arquivos baixados | [SHA256SUMS.txt](https://github.com/gsantanaoffsec/metaforge-test-version/releases/download/demo-v1.0.0/SHA256SUMS.txt) |
+| Windows x64 — portátil, runtime incluído | [MetaForge-Demo-win-x64.zip](https://github.com/gsantanaoffsec/metaforge-test-version/releases/download/demo-v1.1.0/MetaForge-Demo-win-x64.zip) |
+| macOS Apple Silicon — aplicativo, runtime incluído | [MetaForge-Demo-macos-arm64.zip](https://github.com/gsantanaoffsec/metaforge-test-version/releases/download/demo-v1.1.0/MetaForge-Demo-macos-arm64.zip) |
+| Notas e todos os arquivos | [Release 1.1.0](https://github.com/gsantanaoffsec/metaforge-test-version/releases/tag/demo-v1.1.0) |
+| Conferir downloads | [SHA256SUMS.txt](https://github.com/gsantanaoffsec/metaforge-test-version/releases/download/demo-v1.1.0/SHA256SUMS.txt) |
+| Conhecer no navegador | [Vitrine web](https://gsantanaoffsec.github.io/metaforge-test-version/) |
+| Cobertura e pendências de validação | [VALIDACAO.md](VALIDACAO.md) |
 
-## Objetivos do MetaForge
+Não é necessário instalar .NET, criar conta, obter uma chave ou configurar um servidor. Os documentos são processados localmente. A demonstração não possui telemetria própria, coleta de HWID ou conexão com a API comercial. Os links da vitrine levam ao GitHub.
 
-O aplicativo completo foi pensado para tornar as propriedades dos arquivos mais fáceis de consultar, revisar e organizar:
+## O que mudou em 1.1.0
 
-1. **Dar visibilidade aos metadados:** consultar propriedades de documentos e imagens em uma interface acessível.
-2. **Permitir ajustes com revisão:** apresentar os campos editáveis, validar valores e conferir o resultado da gravação.
-3. **Facilitar a organização:** reutilizar regras, preparar conjuntos de arquivos e acompanhar operações no histórico.
-4. **Ajudar na conferência:** comparar arquivos e verificar requisitos escolhidos pelo usuário.
-5. **Trabalhar localmente:** o conteúdo dos documentos não é enviado ao servidor de licenciamento.
+- Novo aplicativo macOS para Apple Silicon (M1 ou posterior).
+- Demo Windows recompilada como edição **portátil**: extrair e abrir, sem instalação ou atalhos.
+- Editor independente compartilhado pelas duas plataformas, limitado ao título DOCX, com verificação das partes preservadas antes da publicação.
+- Revisão do título antes de salvar, confirmação de descarte e bloqueio de fechamento durante a operação.
+- Vitrine, documentação e downloads atualizados para os dois sistemas.
 
-Esta edição apresenta a proposta visual e libera um teste pequeno e concreto. Ela não oferece as funções completas do produto.
+Os fontes privados antigos da demo 1.0.0 não estavam no clone público. A versão 1.1.0 foi reconstruída como uma demo reduzida independente; ela não contém o motor completo. A aparência dos aplicativos foi ajustada. O Windows 1.0.0 continua disponível na [release anterior](https://github.com/gsantanaoffsec/metaforge-test-version/releases/tag/demo-v1.0.0).
 
-## Duas formas de conhecer
+## Testar um documento real
 
-**Vitrine web:** explore as seções, três exemplos de arquivo e prévias das ferramentas pelo navegador, inclusive no celular. Os dados são fictícios. A vitrine não abre, edita ou exporta arquivos; não instala componentes nem se conecta ao servidor do produto.
+1. Extraia **todos os arquivos** do ZIP. Não execute dentro do arquivo compactado.
+2. Windows: abra `MetaForgeDemo.exe`. macOS: abra `MetaForge Demo.app`; pode arrastá-lo para Aplicativos.
+3. Clique em **Abrir DOCX** e escolha um documento de teste.
+4. Altere **Título**, o único campo editável. Autor e assunto aparecem somente para leitura.
+5. Clique em **Revisar e salvar nova cópia**, confira o novo título e confirme.
+6. Escolha um **nome novo**, com extensão `.docx`. Destinos existentes são recusados.
+7. Abra a cópia novamente na demo ou consulte suas propriedades no Word.
 
-**MetaForge Demo para Windows x64:** uma edição independente e instalável, com runtime incluído. Você pode abrir um DOCX, alterar **somente o título** e salvar uma **nova cópia**. Todos os demais campos e operações estão bloqueados. PDF e imagens aparecem somente como exemplos fictícios. Esta edição não contém o motor completo do MetaForge, servidor, ExifTool, ativação de licença ou coleta de HWID.
+O título alterado é a **propriedade de metadados**. Não é o título no corpo do documento, cabeçalho da página ou nome do arquivo. Nenhuma edição de autor, assunto, datas, GPS, conteúdo, PDF, imagem ou TXT está disponível.
 
-O instalador cria uma cópia em `%LOCALAPPDATA%\MetaForgeDemo` e um atalho no menu Iniciar, sem exigir administrador. Pode ser desinstalado pela própria tela de Configurações. Não é registrado em Aplicativos instalados do Windows.
+Atalhos: **Ctrl+O/Ctrl+S** no Windows; **⌘O/⌘S** no macOS. Os campos pendentes permanecem ao navegar entre as seções. Abrir outro arquivo ou fechar com alteração pendente pede confirmação.
 
-![Prévia da vitrine no navegador](docs/preview-web.png)
+## Plataformas e instalação
 
-![Prévia da edição Windows com título DOCX disponível](docs/preview-windows.png)
+### Windows
+
+Windows x64 com interface gráfica, permissão para executar aplicativos e criar arquivos. Reserve **500 MB**, além dos documentos. O runtime .NET/WPF está incluído no pacote.
+
+A versão 1.1.0 é portátil. Não grava em `%LOCALAPPDATA%`, não cria atalhos, serviços ou registro de instalação. Mantenha **todos os arquivos e subpastas** juntos. Não substitua a pasta da edição completa.
+
+Se usou a demo 1.0.0 instalada, pode removê-la por **Configurações → Desinstalar esta demonstração** naquela versão. A nova edição funciona separadamente.
+
+O executável não possui certificado Authenticode comercial. O Windows pode indicar publicador desconhecido; políticas locais podem impedir a execução. Os hashes conferem o conteúdo e não substituem a assinatura do publicador.
+
+**A compilação Windows foi concluída no macOS. A execução da interface 1.1.0 e os testes em Windows limpo ainda não foram realizados.** Não são reaproveitados como evidência os testes da interface antiga.
+
+### macOS
+
+Apple Silicon (M1 ou posterior). O pacote tem alvo mínimo **macOS 14**, mas foi executado somente no Mac ARM64/macOS 27 disponível nesta entrega. Intel e outras versões do macOS ainda não foram validados.
+
+Extraia o ZIP e abra o aplicativo, ou arraste-o para Aplicativos. Não exige .NET externo. Reserve **250 MB**, além dos documentos.
+
+O aplicativo tem assinatura local **ad hoc**, sem Developer ID e sem notarização Apple. O Gatekeeper pode impedir a abertura de um download. Use os controles normais de abertura/privacidade do macOS quando disponíveis e respeite as políticas do computador. Não é necessário desativar proteções do sistema. A assinatura local não identifica um publicador certificado.
 
 ## Recursos disponíveis e bloqueados
 
-| Recurso | Vitrine web | Windows Demo |
+| Recurso | Vitrine web | Aplicativos Windows/macOS |
 | --- | --- | --- |
-| Navegar pelas quatro seções principais | Disponível | Disponível |
-| Exemplos de PDF, Word e imagem | Dados fictícios | Dados fictícios |
-| Prévias de perfis, lote, inspeção e histórico | Disponível | Disponível |
-| Abrir um DOCX do computador | Indisponível | Disponível |
-| Ler título, autor e assunto de um DOCX | Indisponível | Disponível |
+| Navegar pelas quatro seções | Disponível | Disponível |
+| Abrir DOCX real, ler título, autor e assunto | Indisponível | Disponível |
 | Editar somente o título e salvar nova cópia | Indisponível | Disponível |
-| Sobrescrever o original ou outro arquivo existente | Indisponível | Bloqueado |
-| Editar autor, assunto, datas, GPS ou demais metadados | Indisponível | Bloqueado |
-| Editar PDF, JPG, JPEG, PNG ou TXT | Indisponível | Bloqueado |
-| Executar perfis, lote, políticas, inventário ou normalização | Indisponível | Bloqueado |
-| Comparação real, renomeação, filas e exportação de relatórios | Indisponível | Bloqueado |
-| Ativação de licença, servidor ou coleta de HWID | Não incluído | Não incluído |
-| Painel administrativo | Não incluído | Não incluído |
+| Sobrescrever original ou destino existente | Indisponível | Bloqueado |
+| Editar outros campos, PDF, imagens ou TXT | Indisponível | Bloqueado |
+| Perfis, lote, políticas, inventário, normalização, comparação, renomeação, filas e histórico | Prévias fictícias | Bloqueados; descrições ilustrativas |
+| Ativação, coleta de HWID e painel administrativo | Não incluídos | Não incluídos |
 
-Nas prévias, estados como “preparado” ou “cópia criada” são ilustrações: não representam operações executadas no seu computador.
+A vitrine usa dados fictícios, não acessa arquivos e não executa operações. Estados de suas prévias são ilustrações. A aparência dela pode diferir dos aplicativos reduzidos.
 
-## Conhecer a interface no navegador
+![Prévia da vitrine](docs/preview-web.png)
 
-1. Abra a [vitrine do MetaForge](https://gsantanaoffsec.github.io/metaforge-test-version/).
-2. Escolha **Licença e dispositivo**, **Editor de metadados**, **Perfis, lote e histórico** ou **Configurações**.
-3. No editor, alterne entre **Documento PDF**, **Documento Word** e **Imagem JPG**.
-4. Use a busca e o filtro de grupos para explorar as propriedades apresentadas.
-5. No workspace, abra as prévias das ferramentas e as quatro abas.
+## Limites e problemas comuns
 
-A vitrine funciona em telas pequenas e seus campos são somente leitura. Ela não possui seletor de arquivos nem APIs de processamento do MetaForge.
-
-## Instalar e executar no Windows
-
-### Requisitos
-
-- Windows x64 com interface gráfica e permissão para executar aplicativos.
-- Permissão para gravar arquivos no perfil de usuário e na pasta de saída dos documentos.
-- Espaço para download, extração e instalação: reserve pelo menos **400 MB**, além das cópias de documentos. O executável com runtime ocupa aproximadamente 140 MB.
-
-**Não é necessário instalar .NET separadamente, criar conta, obter uma chave ou configurar um servidor.** O aplicativo Windows não executa diretamente em macOS ou Linux; nesses sistemas, use a vitrine web.
-
-### Instalação
-
-1. Baixe **MetaForge-Demo-win-x64.zip** na [release oficial](https://github.com/gsantanaoffsec/metaforge-test-version/releases/tag/demo-v1.0.0).
-2. Extraia **todos os arquivos** para uma pasta. Não execute o programa de dentro do ZIP.
-3. Abra **MetaForgeDemo.exe**.
-4. Leia as condições. Se concordar, marque **Li e aceito as condições desta demonstração**.
-5. Clique em **Instalar e abrir**.
-
-O instalador cria `%LOCALAPPDATA%\MetaForgeDemo` e o atalho **MetaForge Demo** no menu Iniciar. A pasta é independente da edição completa. Nas próximas aberturas, utilize esse atalho.
-
-O executável **não possui certificado Authenticode comercial**. O Windows pode informar que o publicador é desconhecido. Os hashes permitem conferir o arquivo, mas não substituem uma assinatura do publicador. Políticas do dispositivo podem impedir a execução; respeite essas restrições e consulte seu administrador quando necessário.
-
-### Testar a alteração de título
-
-1. Na seção **Editor de metadados**, clique em **Abrir DOCX**.
-2. Selecione um documento Word de teste.
-3. Confira as propriedades. Somente **Título** estará editável.
-4. Altere o título e clique em **Validar título e salvar cópia**.
-5. Escolha um **nome novo**, com extensão `.docx`, em uma pasta onde você possa gravar.
-6. Abra a cópia novamente na demo ou consulte as propriedades dela no Word para conferir.
-
-**O título alterado é a propriedade de metadados do arquivo. Não é o texto do título no corpo do documento, o cabeçalho da página ou o nome do arquivo.**
-
-O original permanece preservado. A demo recusa substituir qualquer destino existente. Ao trocar de arquivo ou fechar com uma alteração pendente, haverá uma confirmação de descarte.
-
-### Limites da edição Windows
-
-- Windows x64; não é um aplicativo para macOS ou Linux.
-- DOCX com até 32 MB; título de até 512 caracteres.
-- Exige propriedades básicas existentes em `docProps/core.xml`.
-- Recusa documentos com assinatura digital, entradas duplicadas e estruturas incompatíveis.
-- Preserva o original e recusa sobrescrever destinos existentes.
-- Não substitui o aplicativo completo e não usa sua avaliação gratuita comercial.
-
-## Problemas comuns
+- DOCX de até **32 MB**, título de até **512 caracteres**.
+- Exige estrutura Word e `docProps/core.xml` existentes; não cria um pacote Word ausente.
+- Recusa assinaturas digitais, links de arquivo, entradas duplicadas/incompatíveis, macros e conteúdo descompactado acima dos limites.
+- Confere o hash da origem antes da gravação e antes de publicar; recusa um documento alterado desde a abertura.
+- Confere o título, os demais metadados e o conteúdo descompactado de todas as outras partes antes de publicar a cópia.
+- A verificação é estrutural, sem renderização no Word. Não é um sanitizador nem uma ferramenta de remoção segura de informações.
+- As datas/compressão do arquivo ZIP podem mudar; os bytes do DOCX resultante não são idênticos ao original.
 
 | Situação | Como proceder |
 | --- | --- |
-| Botão de salvar desativado | Abra um DOCX real e altere o título. Exemplos fictícios e títulos sem mudança não são gravados. |
-| “O destino já existe” | Escolha outro nome; a demonstração não sobrescreve arquivos. |
-| “O arquivo original mudou” | Abra o DOCX novamente antes de repetir a alteração. |
-| DOCX sem propriedades básicas | Use outro documento salvo pelo Word. A demo não cria toda a estrutura de metadados ausente. |
-| DOCX com assinatura digital | Use um documento de teste sem assinatura. A demo recusa invalidar uma assinatura existente. |
-| Falha ao instalar ou substituir a cópia instalada | Feche uma instância anterior e tente novamente. Confira as permissões da pasta. |
-| Falha de permissão ao salvar | Escolha uma pasta em que você possa criar arquivos. |
-| Outro recurso informa bloqueio | É o comportamento esperado: apenas o título DOCX está liberado nesta edição. |
+| Salvar desativado | Abra um DOCX e altere seu título. Após salvar, altere novamente ou abra a cópia. |
+| O destino já existe | Escolha outro nome. A demo não substitui arquivos. |
+| O arquivo original mudou | Abra o documento novamente antes de repetir. |
+| Arquivo sem propriedades básicas ou incompatível | Use um documento DOCX salvo pelo Word, sem assinatura ou macros. |
+| Falha de permissão | Escolha uma pasta onde possa criar arquivos. |
+| Outro recurso bloqueado | É esperado: somente título DOCX está liberado. |
 
-## Desinstalar
+## Remover a versão 1.1.0
 
-Abra **Configurações → Desinstalar esta demonstração**. O aplicativo fecha e solicita a remoção de seus próprios arquivos e do atalho. Os documentos que você abriu e as cópias que salvou não são excluídos.
+Feche o aplicativo e apague a pasta extraída ou `MetaForge Demo.app`. Não há serviços, licenças ou dados de conta para remover. Preserve seus documentos e cópias salvas. A edição completa e a demo antiga são independentes.
 
-Se a política do computador impedir esse processo, feche a demo e remova manualmente `%LOCALAPPDATA%\MetaForgeDemo` e o atalho **MetaForge Demo** no menu Iniciar. Preserve qualquer arquivo pessoal que você tenha colocado nessa pasta.
+## Conferir os arquivos e componentes
 
-## Privacidade e conteúdo do pacote
+O pacote Windows contém o executável, bibliotecas e runtime .NET/WPF, termos, instruções e avisos de terceiros em `licenses/`. O pacote macOS contém o aplicativo AppKit/WebKit, backend e runtime .NET, interface local, ícone e avisos. Não há ExifTool, motor completo, fontes C#/Swift, PDB, mapas, banco, chave privada ou configuração comercial.
 
-A demo Windows lê o DOCX selecionado e grava uma cópia mediante uma ação explícita. Não possui telemetria própria, ativação, coleta de HWID, envio de documentos ou painel administrativo. Os exemplos web são fixos e fictícios; o link de download direciona ao GitHub.
-
-O ZIP Windows contém **somente** `MetaForgeDemo.exe`, `LEIA-ME.txt`, `TERMOS-DE-USO.md`, `OFL.txt`, `DOTNET-LICENSE.txt`, `DOTNET-NOTICES.txt`, `WPF-LICENSE.txt` e `SHA256SUMS.txt`. Os textos de licença preservam os avisos dos componentes incluídos. Não há fontes C#, PDB, banco de dados, chave privada ou configuração de produção.
-
-O arquivo de checksums anexado separadamente à release permite conferir os ZIPs. No PowerShell:
+PowerShell:
 
 ```powershell
 Get-FileHash .\MetaForge-Demo-win-x64.zip -Algorithm SHA256
 ```
 
-Compare o resultado com a linha correspondente de `SHA256SUMS.txt`.
+macOS:
 
-## Publicar a vitrine
+```sh
+shasum -a 256 MetaForge-Demo-macos-arm64.zip
+```
 
-Envie `docs/`, `.gitignore`, este README, `LEIA-ME-DEMO.txt` e `TERMOS-DE-USO.md` para **este repositório separado**. Em **Settings → Pages**, escolha **Deploy from a branch**, a branch publicada e a pasta **/docs**, depois salve. [Instruções oficiais do GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+Compare com `SHA256SUMS.txt` da release. Consulte os [termos de uso](TERMOS-DE-USO.md).
 
-O endereço da vitrine é `https://gsantanaoffsec.github.io/metaforge-test-version/`. O HTML/CSS/JavaScript é público e inspecionável pelo navegador; contém somente interface e dados fictícios. A publicação usa a branch `main` e `/docs`.
+## Manutenção da publicação
 
-Para prévia local, abra `docs/index.html` ou sirva a pasta `docs` com um servidor estático local.
+A vitrine é publicada em GitHub Pages pela branch `main`, pasta `/docs`. Este repositório público não recupera os fontes privados dos aplicativos. Fontes, scripts de build e evidências da demo são mantidos no projeto privado, sem dependência do motor completo. Não envie fontes privados, certificados, bancos, dados, logs ou o projeto principal para este repositório.
 
-## Publicar o instalador
-
-Em **Releases → Draft a new release**, crie uma tag, por exemplo `demo-v1.0.0`, e anexe **MetaForge-Demo-win-x64.zip** e seu arquivo de checksums. Publique a release e divulgue o link dela. [Instruções oficiais de releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
-
-O executável inclui o runtime e pode exceder 100 MB. Distribua o ZIP em **Releases**, sem adicionar binários ao histórico Git. Não envie `private-source/`, `artifacts/`, fontes C#, arquivos de teste, `.git` ou o repositório principal para esta publicação. Essas pastas locais estão ignoradas.
-
-Fontes da demonstração e scripts de compilação são mantidos localmente, fora do conteúdo público. Faça um backup privado deles antes de trocar de computador: `git pull` deste repositório não os recupera.
-
-## Verificações locais
-
-Foram concluídas 40 verificações da edição Windows e 90 verificações da vitrine. Os testes cobrem alteração exclusiva do título, preservação de outras partes do DOCX e da origem, recusa de sobrescrita, entradas incompatíveis, navegação rápida, foco, filtros, abas por teclado e layouts de 375 a 1920 pixels. O instalador publicado abriu com o runtime incluído, sem executar a instalação.
-
-A instalação/desinstalação completa em uma máquina Windows limpa não foi executada nesta entrega. Não há certificado comercial de assinatura. Os testes locais não substituem a validação em outros ambientes nem garantem funcionamento em todos os computadores.
-
-## Direitos e proteção
-
-Veja [TERMOS-DE-USO.md](TERMOS-DE-USO.md). As restrições de uso ressalvam permissões legais e licenças de terceiros. Texto, assinatura digital ou hash não tornam o software impossível de analisar. A proteção adotada nesta demo é distribuir uma edição reduzida que não inclui o motor completo do produto. O executável gerado não está assinado com certificado Authenticode comercial.
+Os ZIPs e checksums são anexados a Releases, sem binários no histórico Git. Cada versão preserva seus downloads anteriores. As validações e pendências atuais estão em [VALIDACAO.md](VALIDACAO.md).
